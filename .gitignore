@@ -1,0 +1,16 @@
+# Ignore dataset and sensitive files
+data/
+*.xlsx
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+
+# OS/system files
+.DS_Store
+
+# Jupyter checkpoints
+.ipynb_checkpoints/

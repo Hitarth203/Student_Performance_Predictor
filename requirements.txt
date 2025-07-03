@@ -1,0 +1,21 @@
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+xgboost
+openpyxl
+
+-------------------------
+
+pandas, numpy: For data manipulation
+
+matplotlib, seaborn: For EDA (even if visuals are commented out)
+
+scikit-learn: For modeling, train/test split, evaluation
+
+xgboost: Optional — included per experimentation
+
+openpyxl: Required for reading Excel files (.xlsx)
+
+
