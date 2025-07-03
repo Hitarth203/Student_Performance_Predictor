@@ -5,7 +5,7 @@ import seaborn as sns
 df = pd.read_excel("/Users/hitarthwadhwani/Desktop/ML projects /data/student_performance_large_dataset.xlsx")
 
 #Previewing the data
-# print(df.head())
+print(df.head())
 
 #Making a Countplot for Distribution of Final Grades
 def plot_grade_distribution(df):
