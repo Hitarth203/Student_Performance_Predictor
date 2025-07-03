@@ -11,21 +11,21 @@ data_path = "/Users/hitarthwadhwani/Desktop/ML projects /data/student_performanc
 df = pd.read_excel(data_path, sheet_name="student_performance_large_datas")
 
 # STEP 2: Run EDA
-# plot_grade_distribution(df)
-# plot_correlation_heatmap(df)
-# plot_boxplots(df)
-# class_balance(df)
+plot_grade_distribution(df)
+plot_correlation_heatmap(df)
+plot_boxplots(df)
+class_balance(df)
 
 clean_df, label_encoders, target_encoder = preprocess_data(df)
 
-# print(clean_df.head())
+print(clean_df.head())
 
 # STEP 4: Feature Selection
 importances = feature_importance_plot(clean_df)
-# print("\nTop Features:")
-# print(importances.sort_values(ascending=False))
+print("\nTop Features:")
+print(importances.sort_values(ascending=False))
 
-# STEP 5: Feature Selection - Keep only the top features
+#Feature Selection 
 features_to_keep = [
     "Attendance_Rate (%)",
     "Assignment_Completion_Rate (%)",
@@ -50,11 +50,11 @@ y = clean_df[target_column]
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42, stratify=y)
 
-# print(f"Train shape: {X_train.shape}")
-# print(f"Test shape: {X_test.shape}")
-# print("Data succesfully splitted")
+print(f"Train shape: {X_train.shape}")
+print(f"Test shape: {X_test.shape}")
+print("Data succesfully splitted")
 
-#Step5.5: Scale the features
+#Step 5: Scaling the features
 scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)

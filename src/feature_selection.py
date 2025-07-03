@@ -6,19 +6,19 @@ from sklearn.ensemble import RandomForestClassifier
 def feature_importance_plot(df, target_column="Final_Grade"):
     df = df.copy()
 
-    # 1. Separate features and target
+    # 1. Separating features and target
     X = df.drop(columns=[target_column])
     y = df[target_column]
 
-    # 2. Fit Random Forest for feature importance
+    # 2. Fiting Random Forest
     model = RandomForestClassifier(n_estimators=100, random_state=42)
     model.fit(X, y)
 
-    # 3. Get feature importances
+    # 3. Getting feature importances
     importances = pd.Series(model.feature_importances_, index=X.columns)
     importances = importances.sort_values(ascending=True)
 
-    # 4. Plot
+    # 4. Plotting the importances
     plt.figure(figsize=(10, 6))
     importances.plot(kind="barh", color="skyblue")
     plt.title("Feature Importance (Random Forest)")
